@@ -1,6 +1,6 @@
-# Reporte de Crédito Consolidado con FICO® Score
+# Simulación del Reporte de Crédito Consolidado con FICO® Score y Prevención de Lavado de Dinero
 
-Simula el reporta del historial crediticio con los Campos Asociados a Nómina, el cumplimiento de pago de los compromisos que la persona ha adquirido con entidades financieras, no financieras e instituciones comerciales que dan crédito o participan en actividades afines al crédito.
+Simula el reporta del historial crediticio; el cumplimiento de pago de los compromisos que la persona ha adquirido con entidades financieras, no financieras e instituciones comerciales que dan crédito o participan en actividades afines al crédito; y filtra contra listas de cumplimiento para Prevención de Lavado de Dinero.
 
 ## Requisitos
 
@@ -48,7 +48,6 @@ Los siguientes datos a modificar se encuentran en ***test/Api/ApiTest.php***
 Es importante contar con el setUp() que se encargará de inicializar la url. Modificar la URL ***('the_url')*** de la petición del objeto ***$config***, como se muestra en el siguiente fragmento de código:
 
 ```php
-
 public function setUp()
 {
     $handler = \GuzzleHttp\HandlerStack::create();
@@ -59,8 +58,8 @@ public function setUp()
     $this->apiInstance = new \RCCFicoScorePLDSimulacion\Client\Api\RCCFicoScorePLDSimulacionApi($client, $config);
 
     $this->x_api_key = "your_api_key";
-    $this->x_full_report = 'false';         
-}    
+    $this->x_full_report = 'false';   
+}      
 
 /**
 * Este es el método que se será ejecutado en la prueba ubicado en path/to/repository/test/Api/ApiTest.php 
@@ -73,10 +72,10 @@ public function testGetReporte()
     $request = new \RCCFicoScorePLDSimulacion\Client\Model\PersonaPeticion();
     $domicilio = new \RCCFicoScorePLDSimulacion\Client\Model\DomicilioPeticion();        
 
-    $request->setApellidoPaterno("ROBERTO");
-    $request->setApellidoMaterno("SAHAGUN");
+    $request->setApellidoPaterno("VILLA");
+    $request->setApellidoMaterno("PATRICIO");
     $request->setApellidoAdicional(null);
-    $request->setPrimerNombre("ZARAGOZA");
+    $request->setPrimerNombre("GARCIA");
     $request->setSegundoNombre(null);
     $request->setFechaNacimiento("1952-05-13");
     $request->setRfc("SAZR010101");
@@ -110,7 +109,7 @@ public function testGetReporte()
     } catch (Exception $e) {
         echo 'Exception when calling RCCFicoScorePLDSimulacionApi->getReporte: ', $e->getMessage(), PHP_EOL;
     }
-} 
+}  
 ?>
 ```
 ## Pruebas unitarias
