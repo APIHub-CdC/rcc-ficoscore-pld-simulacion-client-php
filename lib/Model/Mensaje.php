@@ -1,34 +1,34 @@
 <?php
 
-namespace RCCFicoScorePLDSimulacion\Client\Model;
+namespace RCCFSPLD\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \RCCFicoScorePLDSimulacion\Client\ObjectSerializer;
+use \RCCFSPLD\Simulacion\MX\Client\ObjectSerializer;
 
 class Mensaje implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
     
-    protected static $RCCFicoScorePLDSimulacionModelName = 'Mensaje';
+    protected static $RCCFSPLDModelName = 'Mensaje';
     
-    protected static $RCCFicoScorePLDSimulacionTypes = [
+    protected static $RCCFSPLDTypes = [
         'tipo_mensaje' => 'int',
         'leyenda' => 'string'
     ];
     
-    protected static $RCCFicoScorePLDSimulacionFormats = [
+    protected static $RCCFSPLDFormats = [
         'tipo_mensaje' => 'int32',
         'leyenda' => null
     ];
     
-    public static function RCCFicoScorePLDSimulacionTypes()
+    public static function RCCFSPLDTypes()
     {
-        return self::$RCCFicoScorePLDSimulacionTypes;
+        return self::$RCCFSPLDTypes;
     }
     
-    public static function RCCFicoScorePLDSimulacionFormats()
+    public static function RCCFSPLDFormats()
     {
-        return self::$RCCFicoScorePLDSimulacionFormats;
+        return self::$RCCFSPLDFormats;
     }
     
     protected static $attributeMap = [
@@ -63,7 +63,7 @@ class Mensaje implements ModelInterface, ArrayAccess
     
     public function getModelName()
     {
-        return self::$RCCFicoScorePLDSimulacionModelName;
+        return self::$RCCFSPLDModelName;
     }
     
     

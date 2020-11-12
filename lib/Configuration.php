@@ -1,6 +1,6 @@
 <?php
 
-namespace RCCFicoScorePLDSimulacion\Client;
+namespace RCCFSPLD\Simulacion\MX\Client;
 
 class Configuration
 {
@@ -18,7 +18,7 @@ class Configuration
     
     protected $host = '';
     
-    protected $userAgent = 'RCCFicoScorePLDSimulacion-Codegen/1.0.0/php';
+    protected $userAgent = 'RCCFSPLD\Simulacion\MX-Codegen/1.0.0/php';
     
     protected $debug = false;
     
@@ -159,7 +159,7 @@ class Configuration
     
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (RCCFicoScorePLDSimulacion\Client) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (RCCFSPLD\Simulacion\MX\Client) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 2.0.0' . PHP_EOL;

@@ -1,6 +1,6 @@
 <?php
 
-namespace RCCFicoScorePLDSimulacion\Client;
+namespace RCCFSPLD\Simulacion\MX\Client;
 
 class ObjectSerializer
 {
@@ -23,19 +23,19 @@ class ObjectSerializer
             return $data;
         } elseif (is_object($data)) {
             $values = [];
-            $formats = $data::RCCFicoScorePLDSimulacionFormats();
-            foreach ($data::RCCFicoScorePLDSimulacionTypes() as $property => $RCCFicoScorePLDSimulacionType) {
+            $formats = $data::RCCFSPLDFormats();
+            foreach ($data::RCCFSPLDTypes() as $property => $RCCFSPLDType) {
                 $getter = $data::getters()[$property];
                 $value = $data->$getter();
                 if ($value !== null
-                    && !in_array($RCCFicoScorePLDSimulacionType, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)
-                    && method_exists($RCCFicoScorePLDSimulacionType, 'getAllowableEnumValues')
-                    && !in_array($value, $RCCFicoScorePLDSimulacionType::getAllowableEnumValues(), true)) {
-                    $imploded = implode("', '", $RCCFicoScorePLDSimulacionType::getAllowableEnumValues());
-                    throw new \InvalidArgumentException("Invalid value for enum '$RCCFicoScorePLDSimulacionType', must be one of: '$imploded'");
+                    && !in_array($RCCFSPLDType, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)
+                    && method_exists($RCCFSPLDType, 'getAllowableEnumValues')
+                    && !in_array($value, $RCCFSPLDType::getAllowableEnumValues(), true)) {
+                    $imploded = implode("', '", $RCCFSPLDType::getAllowableEnumValues());
+                    throw new \InvalidArgumentException("Invalid value for enum '$RCCFSPLDType', must be one of: '$imploded'");
                 }
                 if ($value !== null) {
-                    $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $RCCFicoScorePLDSimulacionType, $formats[$property]);
+                    $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $RCCFSPLDType, $formats[$property]);
                 }
             }
             return (object)$values;
@@ -165,13 +165,13 @@ class ObjectSerializer
         } else {
             $discriminator = $class::DISCRIMINATOR;
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-                $subclass = '\RCCFicoScorePLDSimulacion\Client\Model\\' . $data->{$discriminator};
+                $subclass = '\RCCFSPLD\Simulacion\MX\Client\Model\\' . $data->{$discriminator};
                 if (is_subclass_of($subclass, $class)) {
                     $class = $subclass;
                 }
             }
             $instance = new $class();
-            foreach ($instance::RCCFicoScorePLDSimulacionTypes() as $property => $type) {
+            foreach ($instance::RCCFSPLDTypes() as $property => $type) {
                 $propertySetter = $instance::setters()[$property];
                 if (!isset($propertySetter) || !isset($data->{$instance::attributeMap()[$property]})) {
                     continue;
