@@ -1,17 +1,17 @@
 <?php
 
-namespace RCCFicoScorePLDSimulacion\Client\Model;
+namespace RCCFSPLD\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \RCCFicoScorePLDSimulacion\Client\ObjectSerializer;
+use \RCCFSPLD\Simulacion\MX\Client\ObjectSerializer;
 
 class PersonaPeticion implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
     
-    protected static $RCCFicoScorePLDSimulacionModelName = 'PersonaPeticion';
+    protected static $RCCFSPLDModelName = 'PersonaPeticion';
     
-    protected static $RCCFicoScorePLDSimulacionTypes = [
+    protected static $RCCFSPLDTypes = [
         'apellido_paterno' => 'string',
         'apellido_materno' => 'string',
         'apellido_adicional' => 'string',
@@ -21,16 +21,16 @@ class PersonaPeticion implements ModelInterface, ArrayAccess
         'rfc' => 'string',
         'curp' => 'string',
         'nacionalidad' => 'string',
-        'residencia' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoResidencia',
-        'estado_civil' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoEstadoCivil',
-        'sexo' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoSexo',
+        'residencia' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoResidencia',
+        'estado_civil' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoEstadoCivil',
+        'sexo' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoSexo',
         'clave_elector_ife' => 'string',
         'numero_dependientes' => 'int',
         'fecha_defuncion' => 'string',
-        'domicilio' => '\RCCFicoScorePLDSimulacion\Client\Model\DomicilioPeticion'
+        'domicilio' => '\RCCFSPLD\Simulacion\MX\Client\Model\DomicilioPeticion'
     ];
     
-    protected static $RCCFicoScorePLDSimulacionFormats = [
+    protected static $RCCFSPLDFormats = [
         'apellido_paterno' => null,
         'apellido_materno' => null,
         'apellido_adicional' => null,
@@ -49,14 +49,14 @@ class PersonaPeticion implements ModelInterface, ArrayAccess
         'domicilio' => null
     ];
     
-    public static function RCCFicoScorePLDSimulacionTypes()
+    public static function RCCFSPLDTypes()
     {
-        return self::$RCCFicoScorePLDSimulacionTypes;
+        return self::$RCCFSPLDTypes;
     }
     
-    public static function RCCFicoScorePLDSimulacionFormats()
+    public static function RCCFSPLDFormats()
     {
-        return self::$RCCFicoScorePLDSimulacionFormats;
+        return self::$RCCFSPLDFormats;
     }
     
     protected static $attributeMap = [
@@ -133,7 +133,7 @@ class PersonaPeticion implements ModelInterface, ArrayAccess
     
     public function getModelName()
     {
-        return self::$RCCFicoScorePLDSimulacionModelName;
+        return self::$RCCFSPLDModelName;
     }
     
     

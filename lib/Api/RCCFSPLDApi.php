@@ -1,6 +1,6 @@
 <?php
 
-namespace RCCFicoScorePLDSimulacion\Client\Api;
+namespace RCCFSPLD\Simulacion\MX\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -8,12 +8,12 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use RCCFicoScorePLDSimulacion\Client\ApiException;
-use RCCFicoScorePLDSimulacion\Client\Configuration;
-use RCCFicoScorePLDSimulacion\Client\HeaderSelector;
-use RCCFicoScorePLDSimulacion\Client\ObjectSerializer;
+use RCCFSPLD\Simulacion\MX\Client\ApiException;
+use RCCFSPLD\Simulacion\MX\Client\Configuration;
+use RCCFSPLD\Simulacion\MX\Client\HeaderSelector;
+use RCCFSPLD\Simulacion\MX\Client\ObjectSerializer;
 
-class RCCFicoScorePLDSimulacionApi
+class RCCFSPLDApi
 {
     
     protected $client;
@@ -45,7 +45,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getConsultasWithHttpInfo($folio_consulta, $x_api_key)
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\Consultas';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\Consultas';
         $request = $this->getConsultasRequest($folio_consulta, $x_api_key);
         try {
             $options = $this->createHttpClientOption();
@@ -91,7 +91,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Consultas',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Consultas',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -99,7 +99,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -107,7 +107,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -115,7 +115,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -123,7 +123,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -131,7 +131,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 410:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -139,7 +139,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -147,7 +147,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -169,7 +169,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getConsultasAsyncWithHttpInfo($folio_consulta, $x_api_key)
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\Consultas';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\Consultas';
         $request = $this->getConsultasRequest($folio_consulta, $x_api_key);
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -299,7 +299,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getCreditosWithHttpInfo($folio_consulta, $x_api_key)
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\Creditos';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\Creditos';
         $request = $this->getCreditosRequest($folio_consulta, $x_api_key);
         try {
             $options = $this->createHttpClientOption();
@@ -345,7 +345,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Creditos',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Creditos',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -353,7 +353,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -361,7 +361,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -369,7 +369,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -377,7 +377,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -385,7 +385,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 410:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -393,7 +393,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -401,7 +401,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -423,7 +423,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getCreditosAsyncWithHttpInfo($folio_consulta, $x_api_key)
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\Creditos';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\Creditos';
         $request = $this->getCreditosRequest($folio_consulta, $x_api_key);
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -553,7 +553,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getDomiciliosWithHttpInfo($folio_consulta, $x_api_key)
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\DomiciliosRespuesta';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\DomiciliosRespuesta';
         $request = $this->getDomiciliosRequest($folio_consulta, $x_api_key);
         try {
             $options = $this->createHttpClientOption();
@@ -599,7 +599,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\DomiciliosRespuesta',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\DomiciliosRespuesta',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -607,7 +607,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -615,7 +615,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -623,7 +623,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -631,7 +631,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -639,7 +639,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 410:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -647,7 +647,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -655,7 +655,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -677,7 +677,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getDomiciliosAsyncWithHttpInfo($folio_consulta, $x_api_key)
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\DomiciliosRespuesta';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\DomiciliosRespuesta';
         $request = $this->getDomiciliosRequest($folio_consulta, $x_api_key);
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -807,7 +807,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getEmpleosWithHttpInfo($folio_consulta, $x_api_key)
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\Empleos';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\Empleos';
         $request = $this->getEmpleosRequest($folio_consulta, $x_api_key);
         try {
             $options = $this->createHttpClientOption();
@@ -853,7 +853,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Empleos',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Empleos',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -861,7 +861,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -869,7 +869,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -877,7 +877,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -885,7 +885,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -893,7 +893,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 410:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -901,7 +901,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -909,7 +909,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -931,7 +931,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getEmpleosAsyncWithHttpInfo($folio_consulta, $x_api_key)
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\Empleos';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\Empleos';
         $request = $this->getEmpleosRequest($folio_consulta, $x_api_key);
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1061,7 +1061,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getMensajesWithHttpInfo($folio_consulta, $x_api_key)
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\Mensajes';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\Mensajes';
         $request = $this->getMensajesRequest($folio_consulta, $x_api_key);
         try {
             $options = $this->createHttpClientOption();
@@ -1107,7 +1107,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Mensajes',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Mensajes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1115,7 +1115,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1123,7 +1123,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1131,7 +1131,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1139,7 +1139,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1147,7 +1147,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 410:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1155,7 +1155,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1163,7 +1163,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1185,7 +1185,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getMensajesAsyncWithHttpInfo($folio_consulta, $x_api_key)
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\Mensajes';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\Mensajes';
         $request = $this->getMensajesRequest($folio_consulta, $x_api_key);
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1315,7 +1315,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getReporteWithHttpInfo($x_api_key, $request, $x_full_report = 'false')
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\Respuesta';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\Respuesta';
         $request = $this->getReporteRequest($x_api_key, $request, $x_full_report);
         try {
             $options = $this->createHttpClientOption();
@@ -1361,7 +1361,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Respuesta',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Respuesta',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1369,7 +1369,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1377,7 +1377,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1385,7 +1385,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1393,7 +1393,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1401,7 +1401,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1409,7 +1409,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1431,7 +1431,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getReporteAsyncWithHttpInfo($x_api_key, $request, $x_full_report = 'false')
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\Respuesta';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\Respuesta';
         $request = $this->getReporteRequest($x_api_key, $request, $x_full_report);
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1557,7 +1557,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getScoresWithHttpInfo($folio_consulta, $x_api_key)
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\Scores';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\Scores';
         $request = $this->getScoresRequest($folio_consulta, $x_api_key);
         try {
             $options = $this->createHttpClientOption();
@@ -1603,7 +1603,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Scores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Scores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1611,7 +1611,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1619,7 +1619,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1627,7 +1627,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1635,7 +1635,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1643,7 +1643,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 410:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1651,7 +1651,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1659,7 +1659,7 @@ class RCCFicoScorePLDSimulacionApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\RCCFicoScorePLDSimulacion\Client\Model\Errores',
+                        '\RCCFSPLD\Simulacion\MX\Client\Model\Errores',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1681,7 +1681,7 @@ class RCCFicoScorePLDSimulacionApi
     
     public function getScoresAsyncWithHttpInfo($folio_consulta, $x_api_key)
     {
-        $returnType = '\RCCFicoScorePLDSimulacion\Client\Model\Scores';
+        $returnType = '\RCCFSPLD\Simulacion\MX\Client\Model\Scores';
         $request = $this->getScoresRequest($folio_consulta, $x_api_key);
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())

@@ -1,6 +1,6 @@
 {
-    "name": "apihub-cdc/rcc-ficoscore-pld-simulacion-client-php",
-    "description": "",
+    "name": "apihub-cdc/rcc-ficoscore-pld-simulacion-client",
+    "description": "Esta API simula el Reporte de Cédito Consolidado con FICO® Score y Prevención de Lavado de Dinero.",
     "keywords": [
         "apihub",
         "php",
@@ -8,6 +8,13 @@
         "api"
     ],
     "homepage": "http://developer.circulodecredito.com.mx",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "APIHub and contributors",
+            "homepage": "https://github.com/APIHub-CdC"
+        }
+    ],
     "require": {
         "php": ">=5.5",
         "ext-curl": "*",
@@ -22,9 +29,9 @@
         "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
-        "psr-4": { "RCCFicoScorePLDSimulacion\\Client\\" : "lib/" }
+        "psr-4": { "RCCFSPLD\\Simulacion\\MX\\Client\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "RCCFicoScorePLDSimulacion\\Client\\" : "test/" }
+        "psr-4": { "RCCFSPLD\\Simulacion\\MX\\Client\\" : "test/" }
     }
 }

@@ -1,29 +1,29 @@
 <?php
 
-namespace RCCFicoScorePLDSimulacion\Client\Model;
+namespace RCCFSPLD\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \RCCFicoScorePLDSimulacion\Client\ObjectSerializer;
+use \RCCFSPLD\Simulacion\MX\Client\ObjectSerializer;
 
 class Credito implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
     
-    protected static $RCCFicoScorePLDSimulacionModelName = 'Credito';
+    protected static $RCCFSPLDModelName = 'Credito';
     
-    protected static $RCCFicoScorePLDSimulacionTypes = [
+    protected static $RCCFSPLDTypes = [
         'fecha_actualizacion' => 'string',
         'registro_impugnado' => 'int',
         'clave_otorgante' => 'string',
         'nombre_otorgante' => 'string',
         'cuenta_actual' => 'string',
-        'tipo_responsabilidad' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoTipoResponsabilidad',
-        'tipo_cuenta' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoTipoCuenta',
-        'tipo_credito' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoTipoCredito',
-        'clave_unidad_monetaria' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoMoneda',
+        'tipo_responsabilidad' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoTipoResponsabilidad',
+        'tipo_cuenta' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoTipoCuenta',
+        'tipo_credito' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoTipoCredito',
+        'clave_unidad_monetaria' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoMoneda',
         'valor_activo_valuacion' => 'int',
         'numero_pagos' => 'int',
-        'frecuencia_pagos' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoFrecuenciaPago',
+        'frecuencia_pagos' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoFrecuenciaPago',
         'monto_pagar' => 'float',
         'fecha_apertura_cuenta' => 'string',
         'fecha_ultimo_pago' => 'string',
@@ -41,7 +41,7 @@ class Credito implements ModelInterface, ArrayAccess
         'historico_pagos' => 'string',
         'fecha_reciente_historico_pagos' => 'string',
         'fecha_antigua_historico_pagos' => 'string',
-        'clave_prevencion' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoPrevencion',
+        'clave_prevencion' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoPrevencion',
         'total_pagos_reportados' => 'int',
         'peor_atraso' => 'float',
         'fecha_peor_atraso' => 'string',
@@ -49,10 +49,10 @@ class Credito implements ModelInterface, ArrayAccess
         'monto_ultimo_pago' => 'double',
         'id_domicilio' => 'string',
         'servicios' => 'string',
-        'can' => '\RCCFicoScorePLDSimulacion\Client\Model\CAN'
+        'can' => '\RCCFSPLD\Simulacion\MX\Client\Model\CAN'
     ];
     
-    protected static $RCCFicoScorePLDSimulacionFormats = [
+    protected static $RCCFSPLDFormats = [
         'fecha_actualizacion' => 'yyyy-MM-dd',
         'registro_impugnado' => 'int32',
         'clave_otorgante' => null,
@@ -93,14 +93,14 @@ class Credito implements ModelInterface, ArrayAccess
         'can' => null
     ];
     
-    public static function RCCFicoScorePLDSimulacionTypes()
+    public static function RCCFSPLDTypes()
     {
-        return self::$RCCFicoScorePLDSimulacionTypes;
+        return self::$RCCFSPLDTypes;
     }
     
-    public static function RCCFicoScorePLDSimulacionFormats()
+    public static function RCCFSPLDFormats()
     {
-        return self::$RCCFicoScorePLDSimulacionFormats;
+        return self::$RCCFSPLDFormats;
     }
     
     protected static $attributeMap = [
@@ -243,7 +243,7 @@ class Credito implements ModelInterface, ArrayAccess
     
     public function getModelName()
     {
-        return self::$RCCFicoScorePLDSimulacionModelName;
+        return self::$RCCFSPLDModelName;
     }
     
     
