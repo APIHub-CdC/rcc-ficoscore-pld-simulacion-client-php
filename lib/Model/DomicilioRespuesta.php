@@ -1,27 +1,27 @@
 <?php
 
-namespace RCCFicoScorePLDSimulacion\Client\Model;
+namespace RCCFSPLD\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \RCCFicoScorePLDSimulacion\Client\ObjectSerializer;
+use \RCCFSPLD\Simulacion\MX\Client\ObjectSerializer;
 
 class DomicilioRespuesta implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
     
-    protected static $RCCFicoScorePLDSimulacionModelName = 'DomicilioRespuesta';
+    protected static $RCCFSPLDModelName = 'DomicilioRespuesta';
     
-    protected static $RCCFicoScorePLDSimulacionTypes = [
+    protected static $RCCFSPLDTypes = [
         'direccion' => 'string',
         'colonia_poblacion' => 'string',
         'delegacion_municipio' => 'string',
         'ciudad' => 'string',
-        'estado' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoEstados',
+        'estado' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoEstados',
         'cp' => 'string',
         'fecha_residencia' => 'string',
         'numero_telefono' => 'string',
-        'tipo_domicilio' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoTipoDomicilio',
-        'tipo_asentamiento' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoTipoAsentamiento',
+        'tipo_domicilio' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoTipoDomicilio',
+        'tipo_asentamiento' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoTipoAsentamiento',
         'fecha_registro_domicilio' => 'string',
         'tipo_alta_domicilio' => 'int',
         'numero_otorgantes_carga' => 'int',
@@ -29,7 +29,7 @@ class DomicilioRespuesta implements ModelInterface, ArrayAccess
         'id_domicilio' => 'string'
     ];
     
-    protected static $RCCFicoScorePLDSimulacionFormats = [
+    protected static $RCCFSPLDFormats = [
         'direccion' => null,
         'colonia_poblacion' => null,
         'delegacion_municipio' => null,
@@ -47,14 +47,14 @@ class DomicilioRespuesta implements ModelInterface, ArrayAccess
         'id_domicilio' => null
     ];
     
-    public static function RCCFicoScorePLDSimulacionTypes()
+    public static function RCCFSPLDTypes()
     {
-        return self::$RCCFicoScorePLDSimulacionTypes;
+        return self::$RCCFSPLDTypes;
     }
     
-    public static function RCCFicoScorePLDSimulacionFormats()
+    public static function RCCFSPLDFormats()
     {
-        return self::$RCCFicoScorePLDSimulacionFormats;
+        return self::$RCCFSPLDFormats;
     }
     
     protected static $attributeMap = [
@@ -128,7 +128,7 @@ class DomicilioRespuesta implements ModelInterface, ArrayAccess
     
     public function getModelName()
     {
-        return self::$RCCFicoScorePLDSimulacionModelName;
+        return self::$RCCFSPLDModelName;
     }
     
     

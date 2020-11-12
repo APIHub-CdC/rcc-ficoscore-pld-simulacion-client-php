@@ -1,36 +1,36 @@
 <?php
 
-namespace RCCFicoScorePLDSimulacion\Client\Model;
+namespace RCCFSPLD\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \RCCFicoScorePLDSimulacion\Client\ObjectSerializer;
+use \RCCFSPLD\Simulacion\MX\Client\ObjectSerializer;
 
 class Empleo implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
     
-    protected static $RCCFicoScorePLDSimulacionModelName = 'Empleo';
+    protected static $RCCFSPLDModelName = 'Empleo';
     
-    protected static $RCCFicoScorePLDSimulacionTypes = [
+    protected static $RCCFSPLDTypes = [
         'nombre_empresa' => 'string',
         'direccion' => 'string',
         'colonia_poblacion' => 'string',
         'delegacion_municipio' => 'string',
         'ciudad' => 'string',
-        'estado' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoEstados',
+        'estado' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoEstados',
         'cp' => 'string',
         'numero_telefono' => 'string',
         'extension' => 'string',
         'fax' => 'string',
         'puesto' => 'string',
         'fecha_contratacion' => 'string',
-        'clave_moneda' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoMoneda',
+        'clave_moneda' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoMoneda',
         'salario_mensual' => 'float',
         'fecha_ultimo_dia_empleo' => 'string',
         'fecha_verificacion_empleo' => 'string'
     ];
     
-    protected static $RCCFicoScorePLDSimulacionFormats = [
+    protected static $RCCFSPLDFormats = [
         'nombre_empresa' => null,
         'direccion' => null,
         'colonia_poblacion' => null,
@@ -49,14 +49,14 @@ class Empleo implements ModelInterface, ArrayAccess
         'fecha_verificacion_empleo' => 'yyyy-MM-dd'
     ];
     
-    public static function RCCFicoScorePLDSimulacionTypes()
+    public static function RCCFSPLDTypes()
     {
-        return self::$RCCFicoScorePLDSimulacionTypes;
+        return self::$RCCFSPLDTypes;
     }
     
-    public static function RCCFicoScorePLDSimulacionFormats()
+    public static function RCCFSPLDFormats()
     {
-        return self::$RCCFicoScorePLDSimulacionFormats;
+        return self::$RCCFSPLDFormats;
     }
     
     protected static $attributeMap = [
@@ -133,7 +133,7 @@ class Empleo implements ModelInterface, ArrayAccess
     
     public function getModelName()
     {
-        return self::$RCCFicoScorePLDSimulacionModelName;
+        return self::$RCCFSPLDModelName;
     }
     
     

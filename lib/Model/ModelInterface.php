@@ -1,15 +1,15 @@
 <?php
 
-namespace RCCFicoScorePLDSimulacion\Client\Model;
+namespace RCCFSPLD\Simulacion\MX\Client\Model;
 
 interface ModelInterface
 {
     
     public function getModelName();
     
-    public static function RCCFicoScorePLDSimulacionTypes();
+    public static function RCCFSPLDTypes();
     
-    public static function RCCFicoScorePLDSimulacionFormats();
+    public static function RCCFSPLDFormats();
     
     public static function attributeMap();
     

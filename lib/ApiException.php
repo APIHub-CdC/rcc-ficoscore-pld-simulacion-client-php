@@ -1,6 +1,6 @@
 <?php
 
-namespace RCCFicoScorePLDSimulacion\Client;
+namespace RCCFSPLD\Simulacion\MX\Client;
 
 use \Exception;
 

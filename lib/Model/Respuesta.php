@@ -1,31 +1,31 @@
 <?php
 
-namespace RCCFicoScorePLDSimulacion\Client\Model;
+namespace RCCFSPLD\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \RCCFicoScorePLDSimulacion\Client\ObjectSerializer;
+use \RCCFSPLD\Simulacion\MX\Client\ObjectSerializer;
 
 class Respuesta implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
     
-    protected static $RCCFicoScorePLDSimulacionModelName = 'Respuesta';
+    protected static $RCCFSPLDModelName = 'Respuesta';
     
-    protected static $RCCFicoScorePLDSimulacionTypes = [
+    protected static $RCCFSPLDTypes = [
         'folio_consulta' => 'string',
         'folio_consulta_otorgante' => 'string',
         'clave_otorgante' => 'string',
         'declaraciones_consumidor' => 'string',
-        'persona' => '\RCCFicoScorePLDSimulacion\Client\Model\PersonaRespuesta',
-        'consultas' => '\RCCFicoScorePLDSimulacion\Client\Model\Consulta[]',
-        'creditos' => '\RCCFicoScorePLDSimulacion\Client\Model\Credito[]',
-        'domicilios' => '\RCCFicoScorePLDSimulacion\Client\Model\DomicilioRespuesta[]',
-        'empleos' => '\RCCFicoScorePLDSimulacion\Client\Model\Empleo[]',
-        'scores' => '\RCCFicoScorePLDSimulacion\Client\Model\Score[]',
-        'mensajes' => '\RCCFicoScorePLDSimulacion\Client\Model\Mensaje[]'
+        'persona' => '\RCCFSPLD\Simulacion\MX\Client\Model\PersonaRespuesta',
+        'consultas' => '\RCCFSPLD\Simulacion\MX\Client\Model\Consulta[]',
+        'creditos' => '\RCCFSPLD\Simulacion\MX\Client\Model\Credito[]',
+        'domicilios' => '\RCCFSPLD\Simulacion\MX\Client\Model\DomicilioRespuesta[]',
+        'empleos' => '\RCCFSPLD\Simulacion\MX\Client\Model\Empleo[]',
+        'scores' => '\RCCFSPLD\Simulacion\MX\Client\Model\Score[]',
+        'mensajes' => '\RCCFSPLD\Simulacion\MX\Client\Model\Mensaje[]'
     ];
     
-    protected static $RCCFicoScorePLDSimulacionFormats = [
+    protected static $RCCFSPLDFormats = [
         'folio_consulta' => null,
         'folio_consulta_otorgante' => null,
         'clave_otorgante' => null,
@@ -39,14 +39,14 @@ class Respuesta implements ModelInterface, ArrayAccess
         'mensajes' => null
     ];
     
-    public static function RCCFicoScorePLDSimulacionTypes()
+    public static function RCCFSPLDTypes()
     {
-        return self::$RCCFicoScorePLDSimulacionTypes;
+        return self::$RCCFSPLDTypes;
     }
     
-    public static function RCCFicoScorePLDSimulacionFormats()
+    public static function RCCFSPLDFormats()
     {
-        return self::$RCCFicoScorePLDSimulacionFormats;
+        return self::$RCCFSPLDFormats;
     }
     
     protected static $attributeMap = [
@@ -108,7 +108,7 @@ class Respuesta implements ModelInterface, ArrayAccess
     
     public function getModelName()
     {
-        return self::$RCCFicoScorePLDSimulacionModelName;
+        return self::$RCCFSPLDModelName;
     }
     
     

@@ -1,31 +1,31 @@
 <?php
 
-namespace RCCFicoScorePLDSimulacion\Client\Model;
+namespace RCCFSPLD\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \RCCFicoScorePLDSimulacion\Client\ObjectSerializer;
+use \RCCFSPLD\Simulacion\MX\Client\ObjectSerializer;
 
 class Consulta implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
     
-    protected static $RCCFicoScorePLDSimulacionModelName = 'Consulta';
+    protected static $RCCFSPLDModelName = 'Consulta';
     
-    protected static $RCCFicoScorePLDSimulacionTypes = [
+    protected static $RCCFSPLDTypes = [
         'fecha_consulta' => 'string',
         'clave_otorgante' => 'string',
         'nombre_otorgante' => 'string',
         'direccion_otorgante' => 'string',
         'telefono_otorgante' => 'string',
         'tipo_credito' => 'string',
-        'clave_unidad_monetaria' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoMoneda',
+        'clave_unidad_monetaria' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoMoneda',
         'importe_credito' => 'float',
-        'tipo_responsabilidad' => '\RCCFicoScorePLDSimulacion\Client\Model\CatalogoTipoResponsabilidad',
+        'tipo_responsabilidad' => '\RCCFSPLD\Simulacion\MX\Client\Model\CatalogoTipoResponsabilidad',
         'id_domicilio' => 'string',
         'servicios' => 'string'
     ];
     
-    protected static $RCCFicoScorePLDSimulacionFormats = [
+    protected static $RCCFSPLDFormats = [
         'fecha_consulta' => 'yyyy-MM-dd',
         'clave_otorgante' => null,
         'nombre_otorgante' => null,
@@ -39,14 +39,14 @@ class Consulta implements ModelInterface, ArrayAccess
         'servicios' => null
     ];
     
-    public static function RCCFicoScorePLDSimulacionTypes()
+    public static function RCCFSPLDTypes()
     {
-        return self::$RCCFicoScorePLDSimulacionTypes;
+        return self::$RCCFSPLDTypes;
     }
     
-    public static function RCCFicoScorePLDSimulacionFormats()
+    public static function RCCFSPLDFormats()
     {
-        return self::$RCCFicoScorePLDSimulacionFormats;
+        return self::$RCCFSPLDFormats;
     }
     
     protected static $attributeMap = [
@@ -108,7 +108,7 @@ class Consulta implements ModelInterface, ArrayAccess
     
     public function getModelName()
     {
-        return self::$RCCFicoScorePLDSimulacionModelName;
+        return self::$RCCFSPLDModelName;
     }
     const SERVICIOS__0 = '0';
     const SERVICIOS__1 = '1';

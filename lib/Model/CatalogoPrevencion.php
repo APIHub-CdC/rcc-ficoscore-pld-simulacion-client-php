@@ -1,7 +1,7 @@
 <?php
 
-namespace RCCFicoScorePLDSimulacion\Client\Model;
-use \RCCFicoScorePLDSimulacion\Client\ObjectSerializer;
+namespace RCCFSPLD\Simulacion\MX\Client\Model;
+use \RCCFSPLD\Simulacion\MX\Client\ObjectSerializer;
 
 class CatalogoPrevencion
 {
