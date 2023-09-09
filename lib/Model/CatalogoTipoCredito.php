@@ -30,6 +30,7 @@ class CatalogoTipoCredito
     const HE = 'HE';
     const HV = 'HV';
     const LC = 'LC';
+    const LR = 'LR';
     const MC = 'MC';
     const NG = 'NG';
     const PB = 'PB';
@@ -77,6 +78,7 @@ class CatalogoTipoCredito
             self::HE,
             self::HV,
             self::LC,
+            self::LR,
             self::MC,
             self::NG,
             self::PB,
